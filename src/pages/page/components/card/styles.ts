@@ -27,6 +27,18 @@ export const DivCard = styled.div`
     width: 50%;
     position: relative;
 
+    @media (max-width: 1235px) {
+      html {
+        font-size: 50.5%;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 5rem;
+        text-align: center;
+      }
+    }
+
     @media (max-width: 1440px) {
       html {
         font-size: 85.5%;
@@ -37,7 +49,7 @@ export const DivCard = styled.div`
       align-items: center;
     }
 
-    @media (max-width: 975px) {
+    @media (max-width: 1415px) {
       html {
         font-size: 65.5%;
       }
@@ -50,7 +62,7 @@ export const DivCard = styled.div`
       justify-content: center;
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 660px) {
       font-size: 40%;
 
       width: 110%;
@@ -70,9 +82,9 @@ export const DivCard = styled.div`
       color: ${theme.colors['base-text']};
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 660px) {
       html {
-        font-size: 50.5%;
+        font-size: 40%;
       }
 
       width: 100%;
@@ -111,7 +123,7 @@ export const DivCard = styled.div`
         align-items: center;
       }
 
-      @media (max-width: 975px) {
+      @media (max-width: 1415px) {
         html {
           font-size: 65.5%;
         }
@@ -123,7 +135,7 @@ export const DivCard = styled.div`
         align-items: center;
       }
 
-      @media (max-width: 975px) {
+      @media (max-width: 1415px) {
         html {
           font-size: 65.5%;
           text-align: center;
@@ -141,9 +153,11 @@ export const DivCard = styled.div`
         justify-content: center;
       }
 
-      @media (max-width: 540px) {
-        html {
-          font-size: 50.5%;
+      @media (max-width: 660px) {
+        html,
+        h1,
+        a {
+          font-size: 40%;
         }
 
         width: 100%;
@@ -178,6 +192,7 @@ export const DivCard = styled.div`
 
       a {
         all: unset;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -187,6 +202,8 @@ export const DivCard = styled.div`
         font-weight: ${theme.fontWeight.regular};
         font-size: ${theme.fontSize[12]};
         line-height: ${theme.lineHeight[160]};
+
+        text-align: center;
 
         font-style: normal;
         color: ${theme.colors.blue};
@@ -234,6 +251,16 @@ export const DivCard = styled.div`
       height: 100%;
       gap: 1.5rem;
 
+      p {
+        font-family: ${theme.fontFamily.nunito};
+        font-weight: ${theme.fontWeight.regular};
+        font-size: ${theme.fontSize[16]};
+        line-height: ${theme.lineHeight[160]};
+
+        font-style: normal;
+        color: ${theme.colors['base-text']};
+      }
+
       img {
         width: 1.125rem;
 
@@ -243,6 +270,11 @@ export const DivCard = styled.div`
       @media (max-width: 1440px) {
         html {
           font-size: 85.5%;
+        }
+
+        p {
+          text-align: center;
+          align-self: center;
         }
 
         display: flex;
@@ -256,8 +288,23 @@ export const DivCard = styled.div`
       flex-direction: row;
 
       gap: 0.5rem;
+
+      p {
+        font-family: ${theme.fontFamily.nunito};
+        font-weight: ${theme.fontWeight.regular};
+        font-size: ${theme.fontSize[16]};
+        line-height: ${theme.lineHeight[160]};
+
+        font-style: normal;
+        color: ${theme.colors['base-text']};
+      }
+
+      image-rendering,
+      svg {
+        color: #3a536b;
+      }
     }
-    @media (max-width: 540px) {
+    @media (max-width: 660px) {
       font-size: 40%;
 
       width: 110%;
@@ -265,6 +312,40 @@ export const DivCard = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    @media (max-width: 1415px) {
+      html {
+        font-size: 65.5%;
+      }
+
+      p {
+        text-align: center;
+        align-self: center;
+      }
+    }
+
+    @media (max-width: 1415px) {
+      html {
+        font-size: 65.5%;
+        text-align: center;
+      }
+      p,
+      h1 {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 1235px) {
+      html {
+        font-size: 50.5%;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 5rem;
+        text-align: center;
+      }
     }
   `}
 `
