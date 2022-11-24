@@ -30,11 +30,12 @@ export const DivCard = styled.div`
     @media (max-width: 1440px) {
       html {
         font-size: 85.5%;
+        width: 100%;
       }
-
+      width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      /* align-items: center; */
     }
 
     @media (max-width: 975px) {
@@ -89,6 +90,7 @@ export const DivCard = styled.div`
     }
 
     .divrow {
+      width: 100%;
       display: flex;
       flex-direction: row;
       gap: 2rem;
@@ -102,13 +104,13 @@ export const DivCard = styled.div`
       @media (max-width: 1440px) {
         html {
           font-size: 85.5%;
-          p {
-          }
         }
+        width: 100%;
 
         display: flex;
+        width: 100%;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
       }
 
       @media (max-width: 975px) {
@@ -209,16 +211,16 @@ export const DivCard = styled.div`
         html {
           font-size: 85.5%;
         }
-
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
       }
     }
 
     .agap {
       display: flex;
-
+      width: 100%;
       gap: 2rem;
     }
 
@@ -244,17 +246,17 @@ export const DivCard = styled.div`
         html {
           font-size: 85.5%;
         }
-
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        /* align-items: center; */
       }
     }
 
     .divrow4 {
       display: flex;
       flex-direction: row;
-
+      width: 100%;
       gap: 0.5rem;
     }
     @media (max-width: 540px) {

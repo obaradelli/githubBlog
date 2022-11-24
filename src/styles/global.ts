@@ -26,6 +26,8 @@ export const GlobalStyle = createGlobalStyle`
      font-weight: ${theme.fontWeight.regular};
      font-size: ${theme.fontSize[16]};
      line-height: ${theme.lineHeight[160]};
+
+     color: ${theme.colors['base-text']};
    }
  `}
 `
