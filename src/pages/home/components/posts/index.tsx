@@ -5,6 +5,10 @@ import { api } from '../../../../lib/api'
 import { dateFormatter } from '../../../../utils/formatter'
 import { CardPost, DivContainer, DivContainerSearch } from './styles'
 
+interface searchProps {
+  search: string
+}
+
 export function Posts() {
   const [issues, setIssues] = useState<Issue[]>([])
 
@@ -18,6 +22,11 @@ export function Posts() {
     LoadIssues()
   }, [LoadIssues])
 
+  const [search, setSearch] = useState('')
+
+  // `/search/issues?q=${search}repo:oBaradelli/githubBlog`
+  console.log(search)
+
   return (
     <>
       <DivContainerSearch>
@@ -28,9 +37,15 @@ export function Posts() {
               {issues.length} {issues.length > 1 ? 'publicações' : 'publicação'}
             </span>
           </div>
-          <input type="text" placeholder="Buscar conteúdo"></input>
+          <input
+            type="text"
+            placeholder="Buscar conteúdo"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          ></input>
         </form>
       </DivContainerSearch>
+
       <DivContainer>
         {issues.map((issue) => {
           return (
