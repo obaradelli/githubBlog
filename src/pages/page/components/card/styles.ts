@@ -111,6 +111,16 @@ export const DivCard = styled.div`
         border-radius: 6px;
       }
 
+      h1 {
+        font-family: ${theme.fontFamily.nunito};
+        font-weight: ${theme.fontWeight.bold};
+        font-size: ${theme.fontSize[24]};
+        line-height: ${theme.lineHeight[160]};
+
+        font-style: normal;
+        color: ${theme.colors['base-title']};
+      }
+
       @media (max-width: 1440px) {
         html {
           font-size: 85.5%;
@@ -154,9 +164,7 @@ export const DivCard = styled.div`
       }
 
       @media (max-width: 660px) {
-        html,
-        h1,
-        a {
+        html {
           font-size: 40%;
         }
 
@@ -175,16 +183,6 @@ export const DivCard = styled.div`
 
       width: 100%;
       border-radius: 6px;
-
-      h1 {
-        font-family: ${theme.fontFamily.nunito};
-        font-weight: ${theme.fontWeight.bold};
-        font-size: ${theme.fontSize[24]};
-        line-height: ${theme.lineHeight[160]};
-
-        font-style: normal;
-        color: ${theme.colors['base-title']};
-      }
 
       img {
         width: 15%;
@@ -228,7 +226,7 @@ export const DivCard = styled.div`
         }
 
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
       }
     }

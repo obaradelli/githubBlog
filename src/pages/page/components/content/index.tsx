@@ -1,15 +1,20 @@
+import ReactMarkdown from 'react-markdown'
+
+import { Issue } from '../../../../@types/Issue'
 import { DivContainer } from './styles'
 
-export function Content() {
+interface ContentProps {
+  issue: Issue
+}
+
+export function Content({ issue }: ContentProps) {
   return (
     <DivContainer>
       <div>
-        <h2>aaaa</h2>
-        <p>awdadadadadadadadawd</p>
+        <p>{issue.body}</p>
       </div>
-      <div>
-        <h2>aaaa</h2>
-        <p>awdadadadadadadadawd</p>
+      <div className="background">
+        <p>{issue.body}</p>
       </div>
     </DivContainer>
   )

@@ -4,10 +4,32 @@ import arrowUp from '../../../../assets/arrowUp.svg'
 import buildingSolid from '../../../../assets/buildingSolid.svg'
 import githubBrands from '../../../../assets/githubBrands.svg'
 import userGroupSolid from '../../../../assets/userGroupSolid.svg'
-import { GithubContext, useGithub } from '../../../../context/GitHubContext'
+import { useEffect, useState } from 'react'
+import { api } from '../../../../lib/api'
+
+interface User {
+  avatar_url: string
+  bio: string
+  company: string
+  followers: number
+  html_url: string
+  id: number
+  login: string
+  name: string
+}
 
 export function Profile() {
-  const { user } = useGithub()
+  const [user, setUser] = useState<User>({} as User)
+
+  async function APIGitHub() {
+    const { data } = await api.get('/users/obaradelli')
+
+    setUser(data)
+  }
+
+  useEffect(() => {
+    APIGitHub()
+  }, [])
 
   return (
     <>

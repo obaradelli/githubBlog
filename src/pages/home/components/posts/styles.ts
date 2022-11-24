@@ -7,6 +7,7 @@ export const DivContainer = styled.div`
     width: 50%;
     height: 100%;
     gap: 2rem;
+    margin-bottom: 2rem;
 
     align-items: center;
     align-content: center;

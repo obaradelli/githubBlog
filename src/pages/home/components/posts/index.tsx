@@ -1,29 +1,23 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { Issue } from '../../../../@types/Issue'
 import { api } from '../../../../lib/api'
 import { dateFormatter } from '../../../../utils/formatter'
 import { CardPost, DivContainer, DivContainerSearch } from './styles'
 
-interface Issue {
-  html_url: string
-  number: number
-  title: string
-  created_at: string
-  body: string
-}
-
 export function Posts() {
   const [issues, setIssues] = useState<Issue[]>([])
 
-  async function LoadIssues() {
+  const LoadIssues = useCallback(async () => {
     const { data } = await api.get('/repos/obaradelli/githubBlog/issues')
 
     setIssues(data)
-  }
+  }, [])
 
   useEffect(() => {
     LoadIssues()
-  }, [])
+  }, [LoadIssues])
+
   return (
     <>
       <DivContainerSearch>
@@ -40,7 +34,12 @@ export function Posts() {
       <DivContainer>
         {issues.map((issue) => {
           return (
-            <NavLink to="/post" style={{ all: 'unset', cursor: 'pointer' }}>
+            <NavLink
+              to="/post"
+              style={{ all: 'unset', cursor: 'pointer' }}
+              key={issue.number}
+              state={{ numberIssue: issue.number }}
+            >
               <CardPost key={issue.number}>
                 <div className="flexcolumn">
                   <div className="flexrow">
