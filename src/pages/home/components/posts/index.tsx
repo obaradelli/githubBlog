@@ -11,6 +11,7 @@ interface searchProps {
 
 export function Posts() {
   const [issues, setIssues] = useState<Issue[]>([])
+  const [search, setSearch] = useState('')
 
   const LoadIssues = useCallback(async () => {
     const { data } = await api.get('/repos/obaradelli/githubBlog/issues')
@@ -18,19 +19,29 @@ export function Posts() {
     setIssues(data)
   }, [])
 
+  const LoadFilteredIssues = async (e: any) => {
+    e.preventDefault()
+
+    if (!search) {
+      LoadIssues()
+      return
+    }
+
+    const { data } = await api.get(
+      `/search/issues?q=${search}repo:oBaradelli/githubBlog`
+    )
+
+    setIssues(data.items)
+  }
+
   useEffect(() => {
     LoadIssues()
   }, [LoadIssues])
 
-  const [search, setSearch] = useState('')
-
-  // `/search/issues?q=${search}repo:oBaradelli/githubBlog`
-  console.log(search)
-
   return (
     <>
       <DivContainerSearch>
-        <form className="space">
+        <form className="space" onSubmit={LoadFilteredIssues}>
           <div className="space2">
             <label>Publicações</label>
             <span>
